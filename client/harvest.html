@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="jquery-ui.css">
+    <script src="jquery-3.6.0.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="controller.js"></script>
+    <title>Harvest Susper</title>
+</head>
+
+<body id="body">
+
+    <div id="main">
+
+        <nav class="navbar  navbar-expand-lg navbar-dark pl-2  ml-0 bg-custom-2">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="#">Harvest Super</a>
+
+                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#myNavbar"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse  " id="myNavbar">
+                    <ul class="nav navbar-nav ">
+                    <form class="form-inline p-0 m-0 ">
+                            <li class="nav-item  ">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" id="btnLogOut">Logout</a>
+                            </li>
+
+                            <li class="nav-item dropdown ">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <b>Search By</b>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#" id="btnNic">Nic</a>
+                                    <a class="dropdown-item" href="#" id="btnName">Name </a>
+                                    <a class="dropdown-item" href="#" id="btnGender">Gender</a>
+                                    <a class="dropdown-item" href="#" id="btnDesignation">Designation</a>
+                                    <a class="dropdown-item" href="#" id="btnStatus">Status</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" id="btnAny">Any</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item ">
+                                <input type="text" id="txtSearchNic" name="txtSearchNic" class="form-control mr-sm-2"
+                                    placeholder="Nic...">
+                                <input type="text" id="txtSearchName" name="txtSearchName" class="form-control mr-sm-2"
+                                    placeholder="Name...">
+                                <select class="form-select" name="cmbSearchGender" id="cmbSearchGender"></select>
+                                <select class="form-select" name="cmbSearchDesignation"
+                                    id="cmbSearchDesignation"></select>
+                                <select class="form-select" name="cmbSearchStatusemployee"
+                                    id="cmbSearchStatusemployee"></select>
+                                <input type="button" id="btnSearch" class="btn btn-outline-success my-2 my-sm-0"
+                                    value="Search">
+                                <input type="button" id="btnSearchClear" class="btn btn-outline-danger my-2 my-sm-0"
+                                    value="Clear Search">
+                            </li>
+                    </form>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- </div>
+        </div> -->
+        <!-- <div class="container"> -->
+
+        <div class="card bg-transparent border-0">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="card bg-transparent border-0">
+                            <div class="card-header bg-info">
+                                <h2>Employee Form</h2>
+                            </div>
+                            <div class="card-body">
+                                <!-- <div class="row"> -->
+                                <form onsubmit="return false" id="employeeForm">
+                                    <div class="form-group">
+                                        <!-- <label for="txtName">Name :</label> -->
+                                        <input type="text" class="form-control " required id="txtName"
+                                            placeholder="Name..." name="txtName">
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <label for="txtNic">NIC : </label> -->
+                                        <input type="text" class="form-control" placeholder="Nic..." required
+                                            id="txtNic" name="txtNic" />
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <label for="txtMobile">Mobile :</label> -->
+                                        <input type="text" class="form-control" placeholder="Mobile..." required
+                                            id="txtMobile" name="txtMobile">
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <label for="txtEmail">Email :</label> -->
+                                        <input type="text" class="form-control" placeholder="Email..." required
+                                            id="txtEmail" name="txtEmail">
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <label for="dobDate">Birth Day :</label> -->
+                                        <input class="form-control" onfocus="(this.type='date')" id="dobDate"
+                                            placeholder="Birth Day..." name="dobDate" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <label for="cmbGender"> Gender :</label> -->
+                                        <select class="form-select" name="cmbGender" id="cmbGender">
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <label for="cmbDesignation"> Designation :</label> -->
+                                        <select class="form-select" name="cmbDesignation" id="cmbDesignation">
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <label for="cmbStatusemployee"> Employee status:</label> -->
+                                        <select name="cmbStatusemployee" class="form-select" id="cmbStatusemployee">
+                                        </select>
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="button" class="btn btn-danger" id="btnClear" data-toggle="tooltip"
+                                            data-placement="top" title="Clear the form">Clear</button>
+                                        <button type="button" class="btn btn-primary" id="btnSubmit"
+                                            data-toggle="tooltip" data-placement="top"
+                                            title="Add the Employee">Add</button>
+                                        <button type="button" class="btn btn-info" id="btnUpdate" data-toggle="tooltip"
+                                            data-placement="top" title="Update the Employee">Update</button>
+                                        <button type="button" class="btn btn-warning" id="btnDelete"
+                                            data-toggle="tooltip" data-placement="top"
+                                            title="Delete the Employee">Remove</button>
+                                    </div>
+                                </form>
+                                <article class="my-2 my-sm-3">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class=" col-md-4">
+                                                <div class="d-inline" id="datepicker" align="right"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <!-- </div> -->
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="col-md-8 col-sm-12 ">
+                        <div class="card bg-transparent border-0">
+                            <div class="card-header bg-warning">
+                                <h2>Employee Veiw</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive ">
+                                    <table class="table table-striped table-hover table-bordered table-info ">
+                                        <thead>
+                                            <!-- <tr>
+                                                <th colspan="7">
+                                                    <center>
+                                                        <h2>Harvest Super </h2>
+                                                    </center>
+                                                </th>
+                                            </tr> -->
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">NAME</th>
+                                                <th scope="col">DOB</th>
+                                                <th scope="col">NIC</th>
+                                                <th scope="col">MOBILE</th>
+                                                <!-- <th scope="col">EMAIL</th> -->
+                                                <th scope="col">GENDER</th>
+                                                <th scope="col">DESIGNATION</th>
+                                                <th scope="col">STATUS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="display"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="MainWindow">
+        <div class="row">
+            <button class="btn btn-success" id="btnHomeMain">Home</button>
+            <button class="btn btn-success" id="btnGuestMain">Guest</button>
+        </div>
+        <div class="row">
+            <button class="btn btn-success" id="btnLoginMain">Login</button>
+            <button class="btn btn-success" id="btnOtherMain">Other</button>
+        </div>
+    </div>
+    <div id="login" class=" form-custom-1 ">
+        <form onsubmit="return false">
+            <div class="form-outline mb-4 bg-light">
+                <h2 id="h1">Login to Harvest Super</h2>
+            </div>
+            <p id="p1"></p>
+            <div class="form-outline mb-4">
+                <input type="text" class="form-control" name="userName" id="userName" placeholder="Enter User Name ...">
+            </div>
+            <div class="form-outline mb-4">
+                <input type="password" class="form-control" name="password" id="password"
+                    placeholder="Enter Password ...">
+            </div>
+            <div class="row mb-4 p-2">
+                <div class="col d-flex justify-content-center">
+
+                    <div class=" col form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="RememberCheck" checked />
+                        <label class="form-check-label" for="RememberCheck"> Remember me </label>
+                    </div>
+                    <div class="col"><a href="#!">Forgot password?</a></div>
+
+                </div>
+            </div>
+            <div class="col p-2">
+                <button type="reset" class="btn btn-danger btn-block mb-4">reset</button>
+                <button type="submit" class="btn btn-primary btn-block mb-4" id="btnLogin">Login</button>
+            </div>
+        </form>
+    </div>
+    <!-- <script>$(function () {
+    $("#datepicker").datepicker();
+  });</script> -->
+</body>
+
+</html>

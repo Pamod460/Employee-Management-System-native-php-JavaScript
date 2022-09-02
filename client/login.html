@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="loginController.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form class="form-custom-1 slider" onsubmit="return false">
+            <div class="form-outline mb-4 bg-light">
+                <h2>Login to Harvest Super</h2>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="text" class="form-control" name="userName" id="userName"  placeholder="Enter User Name ...">
+            </div>
+            <div class="form-outline mb-4">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password ...">
+            </div> 
+            <div class="row mb-4 p-2">
+                <div class="col d-flex justify-content-center">
+
+                    <div class=" col form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="RememberCheck" checked />
+                        <label class="form-check-label" for="RememberCheck"> Remember me </label>
+                    </div>
+                    <div class="col"><a href="#!">Forgot password?</a></div>
+
+                </div>
+            </div>
+            <div class="col p-2">
+                <button type="reset" class="btn btn-danger btn-block mb-4">reset</button>
+                <button type="submit" class="btn btn-primary btn-block mb-4" id="btnLogin">Login</button>
+            </div>
+    </div>
+    </form>
+    </div>
+</body>
+
+</html>
